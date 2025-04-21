@@ -11,3 +11,10 @@ nav a {
      color: #333;
      font-weight: bold;
 }
+
+@media(max-width:550px){
+     nav ul{
+          display: flex;
+          flex-direction: column;
+     }
+}

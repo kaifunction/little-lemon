@@ -25,12 +25,57 @@ section li a {
      /* font-weight: bold; */
 }
 
-.contact-container{
 
-}
 
-.navigation-container{
-     /* display: flex;
+
+/* .contact-container{
+
+} */
+
+/* .navigation-container{
+     display: flex;
      flex-direction: column;
-     text-align: left; */
+     text-align: left;
+} */
+
+
+
+@media (max-width:768px){
+     footer{
+          .navigation-container{
+               display: none;
+          }
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem 0 1rem 0;
+     }
+     address{
+          font-size: .7rem;
+     }
+     .contact-container p{
+          font-size: .7rem;
+     }
+     a{
+          font-size: .7rem;
+     }
+
+     .contact-container{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .follow-us-container{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     footer > p {
+          margin-top: 0;
+          font-size: .7rem;
+          font-weight: bold;
+        }
 }

@@ -10,7 +10,7 @@ function Footer() {
         <a href="mailto:info@littlelemon.com">info@littlelemon.com</a>
       </section>
       <section className="navigation-container">
-        <h2>Navigation</h2>
+        <h3>Navigation</h3>
 
         <li>
           <a href="/home">Home</a>
@@ -26,7 +26,7 @@ function Footer() {
         </li>
       </section>
       <section className="follow-us-container">
-        <h2>Follow Us</h2>
+        <h3>Follow Us</h3>
         <li>
           <a href="https://facebook.com/littlelemon">Facebook</a>
         </li>
