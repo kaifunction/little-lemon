@@ -1,0 +1,36 @@
+footer{
+     display: flex;
+     justify-content: space-evenly;
+     background-color: rgba(73, 94, 87, 1);
+     color: #EDEFEE;
+     padding: 2rem 0 2rem 0;
+}
+
+li {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
+
+
+section a{
+     text-decoration: none;
+     color: #EDEFEE;
+     /* font-weight: bold; */
+}
+
+section li a {
+     text-decoration: none;
+     color: #EDEFEE;
+     /* font-weight: bold; */
+}
+
+.contact-container{
+
+}
+
+.navigation-container{
+     /* display: flex;
+     flex-direction: column;
+     text-align: left; */
+}
