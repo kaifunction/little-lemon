@@ -41,12 +41,14 @@ main{
 .top-left button{
      font-size: 1rem;
      font-weight: 600;
-     width: 150px;
+     width: 240px;
      height: 35px;
      background-color: #F4CE14;
      margin-top: 40px;
      border: none;
      border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
 }
 
 .top-container img{
@@ -66,7 +68,7 @@ main{
 .bottom-top{
      display: flex;
      flex-direction: row;
-     justify-content: space-evenly;
+     justify-content: space-around;
      align-items: center;
      margin-top: 4rem;
 }
@@ -85,6 +87,7 @@ main{
      /* margin-top: 40px; */
      border: none;
      border-radius: 5px;
+     cursor: pointer;
 }
 
 article{

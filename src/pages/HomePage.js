@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import mainPic from "../images/restauranfood.jpg";
 import salad from "../images/greek salad.jpg";
 import bruchetta from "../images/Bruchetta.jpg";
 import lemonDessert from "../images/lemon dessert.jpg";
 import infoPic from "../images/Mario and Adrian A.jpg";
 import infoPicb from "../images/Mario and Adrian b.jpg";
-import "./HomePage.css"
+import "./HomePage.css";
 
-function Main() {
+function HomePage() {
   return (
     <main>
       {/* reserve table button */}
@@ -18,7 +19,9 @@ function Main() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button type="button">Reserve a Table</button>
+          <Link to="/booking">
+            <button type="button">Reserve a Table</button>
+          </Link>
         </div>
         <img src={mainPic} alt="" width="250px" height="320px" />
       </section>
@@ -120,12 +123,12 @@ function Main() {
           </p>
         </div>
         <div className="info-images-overlap">
-        <img  className="top-img" src={infoPic} width='300px'/>
-        <img className="bottom-img"  src={infoPicb} width='300px' />
+          <img className="top-img" src={infoPic} width="300px" />
+          <img className="bottom-img" src={infoPicb} width="300px" />
         </div>
       </section>
     </main>
   );
 }
 
-export default Main;
+export default HomePage;
