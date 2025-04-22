@@ -123,8 +123,8 @@ function HomePage() {
           </p>
         </div>
         <div className="info-images-overlap">
-          <img className="top-img" src={infoPic} width="300px" />
-          <img className="bottom-img" src={infoPicb} width="300px" />
+          <img className="top-img" src={infoPic} alt='pic' width="300px" />
+          <img className="bottom-img" src={infoPicb} alt='pic' width="300px" />
         </div>
       </section>
     </main>

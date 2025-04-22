@@ -1,12 +1,13 @@
 import { useState } from "react";
-import "./BookingForm.css"
-import { Link } from "react-router-dom";
+import "./BookingForm.css";
+// import { useNavigate } from "react-router-dom";
 
 function BookingForm(props) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+//   const navigate = useNavigate();
 //   const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
 const handleDateChange = (e) => {
@@ -18,13 +19,22 @@ const handleDateChange = (e) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ date, time, guests, occasion });
+    const formData = {
+     date,
+     time,
+     guests,
+     occasion,
+    };
+    props.submitForm(formData)
 
-    setTimeout(() => {
-     setDate("");
-     setTime("");
-     setGuests(1);
-     setOccasion("Birthday")
-    }, 5000);
+//     setTimeout(() => {
+//      setDate("");
+//      setTime("");
+//      setGuests(1);
+//      setOccasion("Birthday")
+//     }, 5000);
+
+//     navigate('/confirm')
   };
 
 
@@ -75,9 +85,8 @@ const handleDateChange = (e) => {
         <option>Anniversary</option>
       </select>
       {/* <input type="submit" value="Make Your reservation"/> */}
-      <Link to='/comfirm'>
+
           <button type="submit" className="form-button">Make Your reservation</button>
-      </Link>
     </form>
   );
 }

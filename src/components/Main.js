@@ -3,8 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import BookingPage from "../pages/BookingPage";
 import About from "../pages/About";
-import Comfirm from "../pages/Comfirm";
+import ConfirmedBooking from "../pages/ConfirmedBooking";
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+import { submitAPI } from "../api/api"
 // 初始化时间
 function initializeTimes() {
   return fetchAvailableTimes(new Date());
@@ -29,6 +31,14 @@ function Main() {
     [],
     initializeTimes
   );
+  const navigate = useNavigate()
+
+  const submitForm = (formData) => {
+     const isSuccess = submitAPI(formData);
+     if(isSuccess){
+          navigate('/confirm')
+     }
+  }
 
   return (
     <main>
@@ -37,11 +47,11 @@ function Main() {
         <Route
           path="/booking"
           element={
-            <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
+            <BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
           }
         />
         <Route path="/about" element={<About />} />
-        <Route path="/comfirm" element={<Comfirm />} />
+        <Route path="/confirm" element={<ConfirmedBooking />} />
       </Routes>
     </main>
   );
