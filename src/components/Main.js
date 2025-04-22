@@ -1,4 +1,4 @@
-// components/Main.js
+/* global fetchAPI */
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import BookingPage from "../pages/BookingPage";
@@ -12,8 +12,8 @@ function initializeTimes() {
 
 // 模拟根据日期返回时间段
 function fetchAvailableTimes(date) {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-}
+     return fetchAPI(date);
+   }
 
 // reducer
 function updateTimes(state, action) {
