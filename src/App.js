@@ -1,6 +1,8 @@
+// import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
-import Main from './components/Main';
+import Main from './pages/HomePage';
 import Footer from './components/Footer';
+// import BookingPage from "./pages/BookingPage";
 import './App.css';
 
 
