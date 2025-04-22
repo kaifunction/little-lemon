@@ -1,3 +1,7 @@
+*{
+  font-family: "Markazi Text", serif;
+}
+
 .app-container{
   display: grid;
   grid-template-areas:
