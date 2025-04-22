@@ -10,6 +10,7 @@ main{
      flex-direction: row;
      justify-content: space-around;
      background-color: #495E57;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
      padding-bottom: 0px;
 }
 
@@ -44,6 +45,7 @@ main{
      width: 240px;
      height: 35px;
      background-color: #F4CE14;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
      margin-top: 40px;
      border: none;
      border-radius: 5px;
@@ -71,6 +73,10 @@ main{
      justify-content: space-around;
      align-items: center;
      margin-top: 4rem;
+}
+
+.bottom-top button{
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .second-h1{
@@ -106,13 +112,16 @@ article p{
 
 .background-same{
      background-color: #EDEFEE;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
      margin-top: -10px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
      padding: 20px 0px 10px 20px;
 }
 
 article img{
-     border-top-right-radius: 12px;
-     border-top-left-radius: 12px;
+     border-top-right-radius: 20px;
+     border-top-left-radius: 20px;
 }
 
 .dish-name{
@@ -131,6 +140,7 @@ article img{
 
 .testmonials-container{
      background-color: #FBDABB;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
      padding: 30px 30px 80px 30px;
 }
 
@@ -155,6 +165,7 @@ article img{
      text-align: left;
      width: 200px;
      background-color: #EE9972;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
      padding: 20px;
      border-radius: 20px;
 }
