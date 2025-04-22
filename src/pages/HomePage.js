@@ -29,7 +29,7 @@ function HomePage() {
       <section className="bottom-container">
         <div className="bottom-top">
           <h1 className="second-h1">This weeks specials!</h1>
-          <button>Online Menu</button>
+          <button onClick={() => alert("coming soon")}>Online Menu</button>
         </div>
         <article>
           <div>

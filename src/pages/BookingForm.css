@@ -1,0 +1,21 @@
+form{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+
+
+.form-button{
+     font-size: 1rem;
+     font-weight: 600;
+     width: 200px;
+     height: 35px;
+     background-color: #F4CE14;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+     margin: 40px 0 100px 0;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
+}

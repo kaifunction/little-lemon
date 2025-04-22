@@ -1,0 +1,9 @@
+.comfirm-container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.comfirm-container h1{
+     font-size: 3rem;
+}

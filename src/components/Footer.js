@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -13,16 +14,16 @@ function Footer() {
         <h3>Navigation</h3>
 
         <li>
-          <a href="/home">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/menu">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="/reserve">Reserve a Table</a>
+          <Link to="/booking">Reserve a Table</Link>
         </li>
       </section>
       <section className="follow-us-container">
