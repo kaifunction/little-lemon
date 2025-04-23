@@ -1,92 +1,138 @@
 import { useState } from "react";
 import "./BookingForm.css";
-// import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm(props) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("Birthday");
-//   const navigate = useNavigate();
-//   const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const navigator = useNavigate();
+  //   const [date, setDate] = useState("");
+  //   const [time, setTime] = useState("");
+  //   const [guests, setGuests] = useState(1);
+  //   const [occasion, setOccasion] = useState("Birthday");
 
-const handleDateChange = (e) => {
-     const newDate = e.target.value;
-     setDate(newDate);
-     props.dispatch({type: 'change_date', date: new Date(newDate)})
-}
+  const formik = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      guests: "",
+      occasion: "",
+    },
+    validationSchema: Yup.object({
+      date: Yup.string().required("Please pick a date!"),
+      time: Yup.string().required("Please pick a time!"),
+      guests: Yup.number()
+        .min(1, "At least one guest")
+        .max(10, "Maximum 10 guests")
+        .required("Please enter number of guests"),
+      occasion: Yup.string().required("Please pick an occasion!"),
+    }),
+    onSubmit: (values) => {
+      console.log(values);
+      props.dispatch({ type: "change_date", date: new Date(values.date) });
+      props.submitForm(values);
+    },
+  });
 
-  const handleSubmit = (e) => {
+  const handleBack = (e) => {
     e.preventDefault();
-    console.log({ date, time, guests, occasion });
-    const formData = {
-     date,
-     time,
-     guests,
-     occasion,
-    };
-    props.submitForm(formData)
-
-//     setTimeout(() => {
-//      setDate("");
-//      setTime("");
-//      setGuests(1);
-//      setOccasion("Birthday")
-//     }, 5000);
-
-//     navigate('/confirm')
+    navigator("/");
   };
 
-
-
   return (
-    <form onSubmit={handleSubmit}>
-     <h1>Reserve Your Table</h1>
+    <form onSubmit={formik.handleSubmit}>
+      <h1>Reserve Your Table</h1>
       {/* ===== */}
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        name="res-date"
-        id="res-date"
-        value={date}
-        onChange={handleDateChange}
-      />
-      {/* ===== */}
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      >
-        {props.availableTimes.map((t) => (
-          <option key={t}>{t}</option>
-        ))}
-      </select>
-      {/* ====== */}
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        id="guests"
-        name="guests"
-        min="1"
-        max="10"
-        placeholder="1"
-        value={guests}
-        onChange={(e) => setGuests(e.target.value)}
-      />
-      {/* ====== */}
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
+      <div className="form-group">
+        <label htmlFor="res-date" className="form-label">
+          Choose date<span style={{ color: "red" }}> *</span>
+        </label>
+        <input
+          className="form-input"
+          type="date"
+          name="date"
+          id="res-date"
+          value={formik.values.date}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        {formik.touched.date && formik.errors.date ? (
+          <div className="form-error">{formik.errors.date}</div>
+        ) : null}
+        {/* ===== */}
+        <label htmlFor="res-time" className="form-label">
+          Choose time<span style={{ color: "red" }}> *</span>
+        </label>
+        <select
+          className="form-select"
+          id="res-time"
+          name="time"
+          value={formik.values.time}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        >
+          {props.availableTimes.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+        {formik.touched.time && formik.errors.time ? (
+          <div className="form-error">{formik.errors.time}</div>
+        ) : null}
+        {/* ====== */}
+        <label htmlFor="guests" className="form-label">
+          Number of guests<span style={{ color: "red" }}> *</span>
+        </label>
+        <input
+          className="form-input"
+          type="number"
+          id="guests"
+          name="guests"
+          min="1"
+          max="10"
+          placeholder="1"
+          value={formik.values.guests}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        {formik.touched.guests && formik.errors.guests && (
+          <div className="form-error">{formik.errors.guests}</div>
+        )}
+        {/* ====== */}
+        <label htmlFor="occasion" className="form-label">
+          Occasion
+        </label>
+        <select
+          className="form-select"
+          name="occasion"
+          id="occasion"
+          value={formik.values.occasion}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        >
+          <option>Birthday</option>
+          <option>Dinner</option>
+          <option>Anniversary</option>
+        </select>
+        {formik.touched.occasion && formik.errors.occasion ? (
+          <div className="form-error">{formik.errors.occasion}</div>
+        ) : null}
+      </div>
       {/* <input type="submit" value="Make Your reservation"/> */}
 
-          <button type="submit" className="form-button">Make Your reservation</button>
+      <div className="form-button-container">
+        <button
+          type="submit"
+          className="form-button"
+          aria-label="On Click to Submit Reservation"
+        >
+          Make Your Reservation
+        </button>
+        <button onClick={handleBack} className="back-button">
+          Back
+        </button>
+      </div>
     </form>
   );
 }

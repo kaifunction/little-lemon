@@ -20,20 +20,63 @@
      border-radius: 5px;
      cursor: pointer;
      padding: 0;
+
 }
+
 
 .add-to-calendar{
      color: #ff8282;
      text-decoration: underline;
      margin-top: 40px;
+     font-size: 1rem;
+     transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.add-to-calendar:hover{
+     color: #f94e4e;
+     font-size: 1.01rem;
+     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .modify-but{
      margin-top: 80px;
+     transition: background-color 0.3s ease;;
+}
+
+.modify-but:hover{
+     background-color: #e2b839;
+     transition: background-color 0.3s ease;
 }
 
 .cancel-but{
      background-color:#EDEFEE;
-     color: #F4CE14;
+     color: #495E57;
      margin-top: 20px;
+     transition: background-color 0.3s ease;
+}
+.cancel-but:hover{
+     background-color: rgb(225, 225, 225);
+     transition: background-color 0.3s ease;
+}
+
+
+.back-button-confirm{
+     font-size: 1rem;
+     font-weight: 600;
+     width: 100px;
+     height: 35px;
+     background-color:#EDEFEE;
+     color: #495E57;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+     margin: 40px 0 100px 0;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
+     transition: background-color 0.3s ease;
+}
+
+.back-button-confirm:hover{
+     background-color: rgb(225, 225, 225);
+     transition: background-color 0.3s ease;
 }

@@ -51,6 +51,12 @@ main{
      border-radius: 5px;
      cursor: pointer;
      padding: 0;
+     transition: background-color 0.3s ease;
+}
+
+.top-left button:hover{
+     background-color: #e2b839;
+     transition: background-color 0.3s ease;
 }
 
 .top-container img{
@@ -77,6 +83,12 @@ main{
 
 .bottom-top button{
      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+     transition: background-color 0.3s ease;
+}
+
+.bottom-top button:hover{
+     background-color: #e2b839;
+     transition: background-color 0.3s ease;
 }
 
 .second-h1{
