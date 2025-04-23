@@ -125,7 +125,6 @@ function BookingForm(props) {
         <button
           type="submit"
           className="form-button"
-          aria-label="On Click to Submit Reservation"
         >
           Make Your Reservation
         </button>
