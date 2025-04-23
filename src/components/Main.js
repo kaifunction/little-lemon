@@ -7,6 +7,9 @@ import ConfirmedBooking from "../pages/ConfirmedBooking";
 import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { submitAPI } from "../api/api"
+import Menu from "../pages/Menu";
+import OrderOnline from "../pages/OrderOnline";
+import Login from "../pages/Login";
 // 初始化时间
 function initializeTimes() {
   return fetchAvailableTimes(new Date());
@@ -52,6 +55,10 @@ function Main() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/confirm" element={<ConfirmedBooking />} />
+        <Route path="/menu" element={<Menu />} />
+          <Route path="/order" element={<OrderOnline />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </main>
   );
