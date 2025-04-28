@@ -1,0 +1,84 @@
+.customer-info-form{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+}
+
+.customer-back-button{
+     font-size: 1rem;
+     font-weight: 600;
+     width: 180px;
+     height: 35px;
+     background-color:#EDEFEE;
+     color: #495E57;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+     margin: -20px 0 40px 0;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
+     transition: background-color 0.3s ease;
+}
+
+.customer-back-button:hover{
+     background-color: rgb(225, 225, 225);
+     transition: background-color 0.3s ease;
+}
+
+/* .customer-info{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+} */
+
+.customer-info{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+
+}
+
+.customer-info-group{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.full-width{
+     grid-column: span 2;
+}
+
+.customer-form-textarea{
+     /* width: rem; */
+     height: 10rem;
+     border-radius: 5px;
+     border: 1px solid #F4CE14;
+     padding: 0 10px;
+     font-size: 1rem;
+}
+
+.info-error{
+     color: red;
+     margin: -15px 0 10px 0;
+}
+
+.customer-submit-button{
+     font-size: 1rem;
+     font-weight: 600;
+     width: 200px;
+     height: 35px;
+     background-color: #F4CE14;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+     margin: 40px 0 100px 0;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
+     transition: background-color 0.3s ease;
+}
+
+.customer-submit-button:hover{
+     background-color: #e2b839;
+     transition: background-color 0.3s ease;
+}

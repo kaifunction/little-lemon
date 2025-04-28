@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./BookingForm.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -13,11 +13,12 @@ function BookingForm(props) {
 
   const formik = useFormik({
     initialValues: {
-      date: "",
-      time: "",
-      guests: "",
-      occasion: "",
+      date: props.bookingData.date || "",
+      time: props.bookingData.time || "",
+      guests: props.bookingData.guests || "",
+      occasion: props.bookingData.occasion || "",
     },
+    enableReinitialize: true,
     validationSchema: Yup.object({
       date: Yup.string().required("Please pick a date!"),
       time: Yup.string().required("Please pick a time!"),
@@ -29,8 +30,10 @@ function BookingForm(props) {
     }),
     onSubmit: (values) => {
       console.log(values);
+      props.setBookingData(values); // 保存 BookingForm 的表单数据
       props.dispatch({ type: "change_date", date: new Date(values.date) });
       props.submitForm(values);
+      navigator("/customer");  // <== 加上这一句！！！
     },
   });
 
@@ -122,11 +125,8 @@ function BookingForm(props) {
       {/* <input type="submit" value="Make Your reservation"/> */}
 
       <div className="form-button-container">
-        <button
-          type="submit"
-          className="form-button"
-        >
-          Make Your Reservation
+        <button type="submit" className="form-button">
+          Reserve a Table
         </button>
         <button onClick={handleBack} className="back-button">
           Back

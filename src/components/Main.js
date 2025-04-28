@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import BookingPage from "../pages/BookingPage";
 import About from "../pages/About";
 import ConfirmedBooking from "../pages/ConfirmedBooking";
+import CustomerInfo from "../pages/CustomerInfo";
 import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { submitAPI } from "../api/api"
@@ -39,7 +40,8 @@ function Main() {
   const submitForm = (formData) => {
      const isSuccess = submitAPI(formData);
      if(isSuccess){
-          navigate('/confirm')
+          // navigate('/confirm')
+          navigate('/customer')
      }
   }
 
@@ -55,6 +57,7 @@ function Main() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/confirm" element={<ConfirmedBooking />} />
+        <Route path="/customer" element={<CustomerInfo />} />
         <Route path="/menu" element={<Menu />} />
           <Route path="/order" element={<OrderOnline />} />
             <Route path="/login" element={<Login />} />
