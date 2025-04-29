@@ -47,6 +47,7 @@ function BookingForm(props) {
       <h1>Reserve Your Table</h1>
       {/* ===== */}
       <div className="form-group">
+        <div className="booking-form-group">
         <label htmlFor="res-date" className="form-label">
           Choose date<span style={{ color: "red" }}> *</span>
         </label>
@@ -62,18 +63,22 @@ function BookingForm(props) {
         {formik.touched.date && formik.errors.date ? (
           <div className="form-error">{formik.errors.date}</div>
         ) : null}
+        </div>
         {/* ===== */}
+        <div className="booking-form-group">
         <label htmlFor="res-time" className="form-label">
           Choose time<span style={{ color: "red" }}> *</span>
         </label>
         <select
           className="form-select"
+          type="select"
           id="res-time"
           name="time"
           value={formik.values.time}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         >
+          <option value="" disabled hidden>Please select a time</option>
           {props.availableTimes.map((t) => (
             <option key={t} value={t}>
               {t}
@@ -83,7 +88,9 @@ function BookingForm(props) {
         {formik.touched.time && formik.errors.time ? (
           <div className="form-error">{formik.errors.time}</div>
         ) : null}
+        </div>
         {/* ====== */}
+        <div className="booking-form-group">
         <label htmlFor="guests" className="form-label">
           Number of guests<span style={{ color: "red" }}> *</span>
         </label>
@@ -94,7 +101,7 @@ function BookingForm(props) {
           name="guests"
           min="1"
           max="10"
-          placeholder="1"
+          placeholder="Select number of guests"
           value={formik.values.guests}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -102,7 +109,9 @@ function BookingForm(props) {
         {formik.touched.guests && formik.errors.guests && (
           <div className="form-error">{formik.errors.guests}</div>
         )}
+        </div>
         {/* ====== */}
+        <div className="booking-form-group">
         <label htmlFor="occasion" className="form-label">
           Occasion
         </label>
@@ -114,6 +123,7 @@ function BookingForm(props) {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         >
+          <option value="" disabled hidden>Please select an Occasion</option>
           <option>Birthday</option>
           <option>Dinner</option>
           <option>Anniversary</option>
@@ -121,6 +131,7 @@ function BookingForm(props) {
         {formik.touched.occasion && formik.errors.occasion ? (
           <div className="form-error">{formik.errors.occasion}</div>
         ) : null}
+        </div>
       </div>
       {/* <input type="submit" value="Make Your reservation"/> */}
 

@@ -22,7 +22,7 @@ function CustomerInfo(props) {
         title: "my-title", // 标题
         confirmButton: "my-confirm-btn", // 确认按钮
         cancelButton: "my-cancel-btn", // 取消按钮
-        content: "my-content", // 内容文本
+        htmlContainer: "my-content", // 内容文本
       },
     });
     if (result.isConfirmed) {
@@ -69,6 +69,7 @@ function CustomerInfo(props) {
             type="text"
             id="firstName"
             name="firstName"
+            placeholder="First Name"
             value={formik.values.firstName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -86,6 +87,7 @@ function CustomerInfo(props) {
             type="text"
             id="lastName"
             name="lastName"
+            placeholder="Last Name"
             value={formik.values.lastName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -103,6 +105,7 @@ function CustomerInfo(props) {
             type="text"
             id="phone"
             name="phone"
+               placeholder="Phone Number"
             value={formik.values.phone}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -120,6 +123,7 @@ function CustomerInfo(props) {
             type="email"
             id="email"
             name="email"
+               placeholder="Email"
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -136,6 +140,7 @@ function CustomerInfo(props) {
           className="customer-form-textarea"
             id="specialRequests"
             name="specialRequests"
+               placeholder="Any special requests?"
             value={formik.values.specialRequests}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
