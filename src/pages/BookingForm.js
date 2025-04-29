@@ -13,10 +13,10 @@ function BookingForm(props) {
 
   const formik = useFormik({
     initialValues: {
-      date: props.bookingData.date || "",
-      time: props.bookingData.time || "",
-      guests: props.bookingData.guests || "",
-      occasion: props.bookingData.occasion || "",
+      date:"",
+      time:"",
+      guests:"",
+      occasion:"",
     },
     enableReinitialize: true,
     validationSchema: Yup.object({
@@ -29,11 +29,15 @@ function BookingForm(props) {
       occasion: Yup.string().required("Please pick an occasion!"),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      console.log("=========>",values);
       props.setBookingData(values); // 保存 BookingForm 的表单数据
       props.dispatch({ type: "change_date", date: new Date(values.date) });
       props.submitForm(values);
-      navigator("/customer");  // <== 加上这一句！！！
+      navigator("/customer", {
+        state: {
+          bookingData: values,
+        },
+      });  // <== 加上这一句！！！
     },
   });
 

@@ -7,7 +7,7 @@ import ConfirmedBooking from "../pages/ConfirmedBooking";
 import CustomerInfo from "../pages/CustomerInfo";
 import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
-import { submitAPI } from "../api/api"
+import { submitAPI } from "../api/api";
 import Menu from "../pages/Menu";
 import OrderOnline from "../pages/OrderOnline";
 import Login from "../pages/Login";
@@ -18,8 +18,8 @@ function initializeTimes() {
 
 // 模拟根据日期返回时间段
 function fetchAvailableTimes(date) {
-     return fetchAPI(date);
-   }
+  return fetchAPI(date);
+}
 
 // reducer
 function updateTimes(state, action) {
@@ -35,15 +35,15 @@ function Main() {
     [],
     initializeTimes
   );
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submitForm = (formData) => {
-     const isSuccess = submitAPI(formData);
-     if(isSuccess){
-          // navigate('/confirm')
-          navigate('/customer')
-     }
-  }
+    const isSuccess = submitAPI(formData);
+    if (isSuccess) {
+      // navigate('/confirm')
+      navigate("/customer");
+    }
+  };
 
   return (
     <main>
@@ -52,20 +52,24 @@ function Main() {
         <Route
           path="/booking"
           element={
-            <BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+            <BookingPage
+              availableTimes={availableTimes}
+              dispatch={dispatch}
+              submitForm={submitForm}
+            />
           }
         />
         <Route path="/about" element={<About />} />
         <Route path="/confirm" element={<ConfirmedBooking />} />
         <Route path="/customer" element={<CustomerInfo />} />
         <Route path="/menu" element={<Menu />} />
-          <Route path="/order" element={<OrderOnline />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="/order" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </main>
   );
 }
 
 export default Main;
-export {initializeTimes, updateTimes}
+export { initializeTimes, updateTimes };

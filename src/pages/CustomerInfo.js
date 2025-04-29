@@ -1,10 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 import "./CustomerInfo.css";
 
 function CustomerInfo(props) {
+     const location = useLocation();
+     const bookingData = location.state?.bookingData || {};
+     // console.log("bookingData", bookingData);
   const navigate = useNavigate();
   const handleBack = async (e) => {
     e.preventDefault();
@@ -51,7 +54,12 @@ function CustomerInfo(props) {
       specialRequests: Yup.string(),
     }),
     onSubmit: (values) => {
-      navigate("/confirm");
+      navigate("/confirm", {
+          state: {
+               bookingData: bookingData,
+               customerData: values,
+          },
+      });
     },
   });
   return (
