@@ -1,0 +1,94 @@
+.about-us-container{
+     text-align: center;
+     margin-top: 3rem;
+     background-color: #F4CE14;
+     margin-top: -0.1rem;
+}
+
+.about-us-pic1{
+     transform: rotate(90deg);
+     width: 30rem;
+     margin: -3rem;
+     opacity: 0.9;
+     border-radius: 30px;
+     z-index: -1000;
+}
+
+.about-us-h1{
+     position: relative;
+     top: -30rem;
+     z-index: 100;
+     color: #EDEFEE;
+}
+
+.about-us-h3{
+     margin: 0 auto;
+     position: relative;
+     top: -30rem;
+     width: 35rem;
+     color: #EDEFEE;
+     background-color: rgb(73, 94, 87, 0.7);
+     border-radius: 20px;
+     padding: 1rem;
+}
+
+.about-us-bottom{
+     margin: 0 auto;
+     margin-top: -300px;
+     width: 44rem;
+}
+
+.about-us-our-philosophy-container{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     margin-top: 6rem;
+     margin-bottom: 6rem;
+}
+
+.about-us-our-philosophy-text{
+     display: flex;
+     flex-direction: column;
+     margin-top: 1rem;
+     margin-bottom: 4rem;
+}
+
+.about-us-our-philosophy-text h2{
+     margin: 0;
+}
+
+.about-us-pic2{
+     width: 20rem;
+     border-radius: 20px;
+}
+
+.about-us-our-mission{
+     margin-top: 5rem;
+     font-size: 1.1rem;
+}
+
+.about-us-bottom-text{
+     font-size: 1.1rem;
+     margin-bottom: -1rem;
+}
+
+.about-us-button{
+     font-size: 1rem;
+     font-weight: 600;
+     width: 240px;
+     height: 35px;
+     background-color: #495E57;
+     color: #F4CE14;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+     margin-top: 40px;
+     margin-bottom: 100px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     padding: 0;
+     transition: background-color 0.3s ease;
+}
+
+.about-us-button:hover{
+     background-color: #354540;
+     transition: background-color 0.3s ease;
+}

@@ -5,6 +5,7 @@ import BookingPage from "../pages/BookingPage";
 import About from "../pages/About";
 import ConfirmedBooking from "../pages/ConfirmedBooking";
 import CustomerInfo from "../pages/CustomerInfo";
+import NotFound from "../pages/NotFound";
 import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { submitAPI } from "../api/api";
@@ -65,7 +66,7 @@ function Main() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/order" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </main>
   );

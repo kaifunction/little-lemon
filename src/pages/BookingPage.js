@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./BookingPage.css";
 import BookingForm from "./BookingForm";
-import CustomerInfo from "./CustomerInfo";
+// import CustomerInfo from "./CustomerInfo";
 
 function BookingPage(props) {
   const [bookingData, setBookingData] = useState({});
