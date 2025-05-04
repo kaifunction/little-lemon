@@ -2,6 +2,7 @@
 import "./BookingForm.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 function BookingForm(props) {
@@ -41,9 +42,27 @@ function BookingForm(props) {
     },
   });
 
-  const handleBack = (e) => {
+  const handleBack = async (e) => {
     e.preventDefault();
-    navigator("/");
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to go back and rebook a table?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes, go back!",
+      cancelButtonText: "No, stay here!",
+      customClass: {
+        popup: "my-popup", // 弹窗本体
+        icon: "my-icon", // 图标
+        title: "my-title", // 标题
+        confirmButton: "my-confirm-btn", // 确认按钮
+        cancelButton: "my-cancel-btn", // 取消按钮
+        htmlContainer: "my-content", // 内容文本
+      },
+    });
+    if (result.isConfirmed) {
+      navigator("/");
+    }
   };
 
   return (

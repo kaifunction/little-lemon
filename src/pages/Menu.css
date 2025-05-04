@@ -1,0 +1,163 @@
+.menu-container {
+     text-align: center;
+     margin-top: 50px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     background-color: black;
+     margin-top: -0.1rem;
+}
+
+.menu-pic1 {
+     /* border-radius: 30px; */
+     width: 35rem;
+     margin: 0 -10rem 0 10rem;
+}
+
+.menu-text {
+     position: relative;
+     top: -45rem;
+     margin: 0 -10rem 0 10rem;
+}
+
+.menu-h1 {
+     font-size: 4rem;
+}
+
+.menu-h1,
+.menu-h3 {
+     color: #EDEFEE;
+}
+
+.menu-bottom {
+     margin-left: 5rem;
+}
+
+.menu-h2 {
+     font-size: 2rem;
+     color: #e2b839;
+     margin-top: 4rem;
+}
+
+.menu-bottom-appetizers {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 2rem;
+}
+
+.menu-bottom-appetizers-list {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     margin: 2rem 0;
+     gap: 2rem;
+}
+
+.menu-bottom-appetizers-list>p {
+     position: relative;
+     left: 5rem;
+     font-size: 1.2rem;
+     font-weight: 900;
+     letter-spacing: 1.6px;
+}
+
+.menu-bottom-appetizers-list-item {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     color: #e2b839;
+     gap: -4rem;
+     border-bottom: 3px solid #757575;
+     margin-bottom: 1rem;
+     background-color: #1a1a1a;
+     border-radius: 12px;
+     padding: 1.5rem;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-bottom-appetizers-list-item .price {
+     font-weight: bold;
+     margin-bottom: 1rem;
+     font-size: 1rem;
+     color: #fff4b3;
+}
+
+.menu-bottom-appetizers-list h3 {
+     color: #e2b839;
+     letter-spacing: 1.6px;
+}
+
+.menu-bottom-appetizers p {
+     color: #e2b839;
+     width: 15rem;
+     text-align: left;
+     letter-spacing: 1.3px;
+     margin-bottom: 1.4rem;
+}
+
+.menu-bottom-appetizers-list-item p {
+     margin: 0;
+     font-size: 1rem;
+     color: #e2b839;
+     line-height: 1.4;
+}
+
+.menu-bottom-salads {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 2rem;
+     margin-left: 3rem;
+}
+
+.menu-bottom-salads p {
+     color: #e2b839;
+     width: 18rem;
+     text-align: left;
+     letter-spacing: 1.3px;
+     margin-bottom: 1.4rem;
+}
+
+.menu-bottom-main-courses {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 2rem;
+}
+
+.menu-bottom-main-courses p {
+     color: #e2b839;
+     width: 18rem;
+     text-align: left;
+     letter-spacing: 1.3px;
+     margin-bottom: 1.4rem;
+}
+
+.menu-bottom-desserts {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.menu-bottom-desserts p {
+     color: #e2b839;
+     width: 18rem;
+     text-align: left;
+     letter-spacing: 1.3px;
+     margin-bottom: 2rem;
+}
+
+.menu-bottom-drinks {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 10rem;
+}
+
+
+.menu-bottom-drinks p {
+     color: #e2b839;
+     width: 18rem;
+     text-align: left;
+     letter-spacing: 1.3px;
+     margin-bottom: 1.4rem;
+}
