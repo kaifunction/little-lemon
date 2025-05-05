@@ -131,7 +131,11 @@ function OrderOnline() {
   }
 
   const handleSubmit = () => {
-    navigate('/orderconfirmed')
+    navigate('/orderconfirmed', {
+      state: {
+        order: order,
+      }
+    })
   }
 
   return (
