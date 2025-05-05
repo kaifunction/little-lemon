@@ -1,0 +1,5 @@
+.order-confirmed-container{
+     display: grid;
+     grid-template-columns: repeat(1, 1fr);
+     text-align: center;
+}

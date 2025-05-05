@@ -20,9 +20,9 @@ function Nav() {
         <li>
           <Link to="/order">Order Online</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/login">Login</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./OrderOnline.css";
 
 function OrderOnline() {
+  const navigate = useNavigate();
   const menu = {
     appetizers: [
       { name: "Bruschetta", price: 12.5 },
@@ -128,6 +130,10 @@ function OrderOnline() {
     setOrder([]);
   }
 
+  const handleSubmit = () => {
+    navigate('/orderconfirmed')
+  }
+
   return (
     <section className="order-online-form-section">
       <h2 className="order-title">Order Online</h2>
@@ -189,7 +195,7 @@ function OrderOnline() {
               .toFixed(2)}
           </h3>
           <button className='reset-button' onClick={handleReset}>Reset</button>
-          <button className="order-submit-button">Submit Order</button>
+          <button className="order-submit-button" onClick={handleSubmit}>Submit Order</button>
         </div>
       )}
     </section>
