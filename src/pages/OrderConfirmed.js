@@ -34,6 +34,9 @@ function OrderConfirmed() {
       ) : (
         <></>
       )}
+          <button
+          className="back-button"
+          onClick={() => navigate("/")}>Back to Home</button>
     </section>
   );
 }
