@@ -170,7 +170,7 @@ function OrderOnline() {
 
       {order.length > 0 && (
         <div className="order-summary">
-          <h3>🧾 Your Order</h3>
+          <h2>🧾 Your Order</h2>
           <ul>
             {order.map((item, index) => (
               <li key={index}>
@@ -179,15 +179,15 @@ function OrderOnline() {
               </li>
             ))}
           </ul>
-          <p className="order-total">
-            Total: $
+          <h3 className="order-total">
+            <span className="order-total-text">Total: $</span>
             {order
               .reduce(
                 (total, item) => total + item.dish.price * item.quantity,
                 0
               )
               .toFixed(2)}
-          </p>
+          </h3>
           <button className='reset-button' onClick={handleReset}>Reset</button>
           <button className="order-submit-button">Submit Order</button>
         </div>
