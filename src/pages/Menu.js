@@ -192,7 +192,7 @@ function Menu() {
       </section>
       <section className="menu-bottom">
         {/* appetizers */}
-        <div className="menu-bottom-appetizers">
+        <div className="menu-bottom-appetizers section-wrapper">
           <h2 className="menu-h2">Appetizers</h2>
           <div className="menu-bottom-appetizers-list">
             {appetizers.map((item, index) => (
@@ -205,7 +205,9 @@ function Menu() {
           </div>
         </div>
         {/* salads */}
-        <div className="menu-bottom-salads">
+        <section className="menu-fourth-section">
+
+        <div className="menu-bottom-salads section-wrapper">
           <h2 className="menu-h2">Salads</h2>
           <div className="menu-bottom-appetizers-list">
             {salads.map((item, index) => (
@@ -218,7 +220,7 @@ function Menu() {
           </div>
         </div>
         {/* Main Courses */}
-        <div className="menu-bottom-main-courses">
+        <div className="menu-bottom-main-courses section-wrapper">
           <h2 className="menu-h2">Main Courses</h2>
           <div className="menu-bottom-appetizers-list">
             {mainCourses.map((item, index) => (
@@ -231,7 +233,7 @@ function Menu() {
           </div>
         </div>
         {/* Desserts */}
-        <div className="menu-bottom-desserts">
+        <div className="menu-bottom-desserts section-wrapper">
           <h2 className="menu-h2">Desserts</h2>
           <div className="menu-bottom-appetizers-list">
             {desserts.map((item, index) => (
@@ -244,7 +246,7 @@ function Menu() {
           </div>
         </div>
         {/* Drinks */}
-        <div className="menu-bottom-drinks">
+        <div className="menu-bottom-drinks section-wrapper">
           <h2 className="menu-h2">Drinks</h2>
           <div className="menu-bottom-appetizers-list">
             {drinks.map((item, index) => (
@@ -256,6 +258,7 @@ function Menu() {
             ))}
           </div>
         </div>
+        </section>
       </section>
     </div>
   );
