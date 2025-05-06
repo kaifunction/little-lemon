@@ -45,15 +45,18 @@
 
    .order-confirmed-item{
      margin-right: 3rem;
+     font-size: 1.3rem;
+     letter-spacing: 0.05rem;
    }
 
    /* 总价 */
    .order-confirmed-total {
      margin-top: 2rem;
      margin-right: 3rem;
-     font-size: 1.8rem;
+     font-size: 2rem;
      color: #333;
      font-weight: bold;
+     letter-spacing: 0.1rem;
    }
 
    /* 按钮 */
