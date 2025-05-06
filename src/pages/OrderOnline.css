@@ -1,5 +1,5 @@
 .order-online-form-section {
-     padding: 3rem 23rem;
+     padding: 3rem 10rem;
      background-color: #495E57;
      max-width: 800px;
      margin: 0 auto;
@@ -21,11 +21,17 @@
      color: #F4CE14;
      margin-bottom: 2rem;
 }
-
+/*
 .order-form-grid {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
      gap: 1.5rem;
+} */
+
+.order-form-grid{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 2rem;
 }
 
 .order-form {
@@ -38,6 +44,24 @@
      font-size: 1rem;
      letter-spacing: .1rem;
      color: #F4CE14;
+}
+
+.order-label-special{
+     font-size: 1rem;
+     letter-spacing: .1rem;
+     color: #F4CE14;
+}
+
+.order-special-requests{
+     position: relative;
+     top: .5rem;
+     color: #495E57;
+     letter-spacing: 0.08rem;
+     font-weight: 800;
+     width: 21.6rem;
+     height: 3.5rem;
+     padding: 1rem;
+     border-radius: 10px;
 }
 
 .order-select,
@@ -86,7 +110,7 @@
      padding: 1rem 1.5rem 0rem 1.5rem;
      border-radius: 12px;
      border: 1px solid #eee;
-     text-align: left;
+     text-align: center;
      letter-spacing: .05rem;
 }
 

@@ -172,6 +172,15 @@ function OrderOnline() {
             />
           </div>
         ))}
+        <div>
+        <label className="order-label-special">SPECIAL REQUESTS</label>
+        <textarea
+          className="order-special-requests"
+          placeholder="Special requests or dietary restrictions"
+          rows="4"
+          cols="50"
+        ></textarea>
+        </div>
       </div>
 
       <button onClick={handleAddToOrder} className="order-button">
