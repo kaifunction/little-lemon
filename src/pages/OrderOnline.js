@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./OrderOnline.css";
 
 function OrderOnline() {
@@ -112,22 +113,41 @@ function OrderOnline() {
     });
   };
 
-  const handleReset = () => {
-    setSelectedDishes({
-      appetizers: "",
-      salads: "",
-      mains: "",
-      desserts: "",
-      drinks: "",
+  const handleReset = async (e) => {
+    e.preventDefault();
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to reset your order?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, reset it!",
+      cancelButtonText: "No, keep it!",
+      customClass: {
+        popup: "my-popup", // 弹窗本体
+        icon: "my-icon", // 图标
+        title: "my-title", // 标题
+        confirmButton: "my-confirm-btn", // 确认按钮
+        cancelButton: "my-cancel-btn", // 取消按钮
+        htmlContainer: "my-content", // 内容文本
+      },
     });
-    setQuantities({
-      appetizers: 1,
-      salads: 1,
-      mains: 1,
-      desserts: 1,
-      drinks: 1,
-    });
-    setOrder([]);
+    if(result.isConfirmed){
+      setSelectedDishes({
+        appetizers: "",
+        salads: "",
+        mains: "",
+        desserts: "",
+        drinks: "",
+      });
+      setQuantities({
+        appetizers: 1,
+        salads: 1,
+        mains: 1,
+        desserts: 1,
+        drinks: 1,
+      });
+      setOrder([]);
+    }
   }
 
   const handleSubmit = () => {
